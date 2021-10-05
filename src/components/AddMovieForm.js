@@ -12,6 +12,7 @@ const AddMovieForm = (props) => {
     genre: "",
     metascore: 0,
     description: "",
+    id: props.movies.length
   });
 
   const handleChange = (e) => {
@@ -105,7 +106,7 @@ const AddMovieForm = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { movies: state.movies };
+  return { movies: state.moviesState.movies };
 };
 
 export default connect(mapStateToProps, { addMovie })(AddMovieForm);
